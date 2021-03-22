@@ -24,7 +24,7 @@ class UserService (val transactionService: TransactionService) {
             val transaction = Transaction(
                 data = transactionService.createTransactionData(ano,mes),
                 valor = transactionService.createTransactionValue(id.toInt(), mes, i),
-                description = transactionService.createTransactionDescription(id.toInt(), mes, i)
+                descricao = transactionService.createTransactionDescription(id.toInt(), mes, i)
             )
 
             transactions.add(i-1,transaction)

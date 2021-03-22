@@ -36,14 +36,14 @@ class TransactionService {
         return (timestamp.time.toString().toLong())
     }
 
-    private fun date(year: Int, month: Int): LocalDate {
-        val yearMonthObject = YearMonth.of(year, month)
+    private fun date(ano: Int, mes: Int): LocalDate {
+        val yearMonthObject = YearMonth.of(ano, mes)
         val daysInMonth = yearMonthObject.lengthOfMonth()
-        val day = getRandomNumber(1, daysInMonth)
-        return LocalDate.of(year, month, day)
+        val day = getRandomDay(1, daysInMonth)
+        return LocalDate.of(ano, mes, day)
     }
 
-    fun getRandomNumber(min: Int, max: Int): Int {
+    fun getRandomDay(min: Int, max: Int): Int {
         return (Math.random() * (max - min) + min).toInt()
     }
 }

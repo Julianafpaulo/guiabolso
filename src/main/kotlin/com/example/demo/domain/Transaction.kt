@@ -3,7 +3,7 @@ package com.example.demo.domain
 
 
 class Transaction(
-        val description: String,
+        val descricao: String,
         val data: Long,
         val valor : Int
 )
