@@ -10,7 +10,7 @@
 
 ## Descrição do desafio
 
-  Nesse desafio foi prosposto a criação de uma API para resgatar transações de um cliente com base no período informado, podendo ser encontrado [aqui](https://github.com/GuiaBolso/seja-um-guia-back).
+  Nesse desafio foi proposto a criação de uma API para resgatar transações de um cliente com base no período informado, podendo ser encontrado [aqui](https://github.com/GuiaBolso/seja-um-guia-back).
 
 ## Funcionalidade
 
