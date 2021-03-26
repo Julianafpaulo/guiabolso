@@ -1,5 +1,4 @@
-package com.example.demo.domain
-
+package com.guiabolso.domain
 
 
 class Transaction(

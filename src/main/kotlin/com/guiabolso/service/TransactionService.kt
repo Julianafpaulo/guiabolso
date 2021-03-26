@@ -1,4 +1,4 @@
-package com.example.demo.service
+package com.guiabolso.service
 
 import org.springframework.stereotype.Service
 import java.sql.Timestamp
@@ -11,7 +11,6 @@ import java.time.YearMonth
 class TransactionService {
 
     fun createTransactionDescription(id: Int, mes: Int, i: Int): String {
-
         val consonants = "bc dfg hjklmn pqrst vwxyz "
         val vogals = "aeiou"
 
@@ -28,11 +27,11 @@ class TransactionService {
     }
 
     fun createTransactionValue(id: Int, mes: Int, i: Int): Int {
-        return ((id * mes) % i+1) * 99
+        return  9999999%((id * mes) - i)
     }
 
     fun createTransactionData(ano: Int, mes: Int): Long {
-       val date = date(ano,mes)
+       val date = randomDate(ano,mes)
 
         val dateTime = LocalDateTime.of(date, LocalTime.now())
         val timestamp = Timestamp.valueOf(dateTime)
@@ -40,7 +39,7 @@ class TransactionService {
         return (timestamp.time.toString().toLong())
     }
 
-    private fun date(ano: Int, mes: Int): LocalDate {
+    private fun randomDate(ano: Int, mes: Int): LocalDate {
         val yearMonthObject = YearMonth.of(ano, mes)
         val daysInMonth = yearMonthObject.lengthOfMonth()
         val day = getRandomDay(1, daysInMonth)

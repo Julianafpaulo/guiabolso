@@ -1,16 +1,15 @@
-package com.example.demo.service
+package com.guiabolso.service
 
-import com.example.demo.domain.Transaction
-import com.example.demo.exception.InvalidMonthException
-import com.example.demo.exception.InvalidUserIdException
-import com.example.demo.exception.InvalidYearException
+import com.guiabolso.domain.Transaction
+import com.guiabolso.exception.InvalidMonthException
+import com.guiabolso.exception.InvalidUserIdException
+import com.guiabolso.exception.InvalidYearException
 import org.springframework.stereotype.Service
 
 @Service
 class UserService (val transactionService: TransactionService) {
 
     fun getTransactionByPeriod(id: String, ano: Int, mes: Int): MutableList<Transaction> {
-        
         validateParams(id= id.toInt(), ano= ano , mes= mes)
         
         return createTransactionList(id= id, ano= ano, mes= mes)
@@ -35,13 +34,13 @@ class UserService (val transactionService: TransactionService) {
 
     private fun validateParams(id: Int, ano: Int, mes: Int) {
         if(id !in 1000..100000) {
-            throw InvalidUserIdException("Id do usuário é inválido")
+            throw InvalidUserIdException()
         }
         if(mes !in 1 .. 12){
-            throw InvalidMonthException("Mês da requisição é inválido")
+            throw InvalidMonthException()
         }
         if(ano < 0){
-            throw InvalidYearException("Ano da requisição é inválido")
+            throw InvalidYearException()
         }
     }
 }

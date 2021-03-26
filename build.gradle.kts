@@ -8,7 +8,7 @@ plugins {
 	kotlin("plugin.jpa") version "1.4.31"
 }
 
-group = "com.example"
+group = "com.guiabolso"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
