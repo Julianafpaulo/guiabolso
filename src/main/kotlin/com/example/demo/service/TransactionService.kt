@@ -6,25 +6,29 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.YearMonth
-import java.util.concurrent.ThreadLocalRandom
 
 @Service
 class TransactionService {
 
     fun createTransactionDescription(id: Int, mes: Int, i: Int): String {
 
-        return buildString {
-            append("Numbers: ")
-            for (i in 1..3) {
-                // 'this' can be omitted
+        val consonants = "bc dfg hjklmn pqrst vwxyz "
+        val vogals = "aeiou"
 
-                append(i)
+        var string = ""
+        for (y in 1..i+10) {
+            val silable = consonants[(y + id - mes) % 26].toString() + vogals[(y + id - mes) % 5]
+
+            string+=silable
+            if(string.length == 60){
+                return string
             }
         }
+        return string
     }
 
     fun createTransactionValue(id: Int, mes: Int, i: Int): Int {
-        return (id * mes) % i
+        return ((id * mes) % i+1) * 99
     }
 
     fun createTransactionData(ano: Int, mes: Int): Long {
